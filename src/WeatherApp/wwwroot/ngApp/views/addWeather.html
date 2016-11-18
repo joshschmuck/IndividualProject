@@ -1,0 +1,21 @@
+﻿<div class="jumbotron">
+    <h2>Post Weather</h2>
+    <form ng-submit="controller.saveWeather()">
+        <div class="form-group">
+            <label>Location</label>
+            <input class="form-control" placeholder="Location" ng-model="controller.weather.location" />
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea rows="5" cols="20" type="text" class="form-control" ng-model="controller.weather.description" placeholder="Description"></textarea>
+        </div>
+        <div class="form-group">
+            <!--<button type="button" ng-click="controller.pickFile()" class="btn btn-warning">Upload Snapshot</button>
+            <img ng-src="{{controller.file.url | fpConvert:{w: 400} }}" alt="{{controller.file.filename}}" />-->
+            <label>Img Url</label>
+            <input placeholder="Img Url" class="form-control" ng-model="controller.weather.item" />
+        </div>
+        <br />
+        <input type="submit" class="btn btn-primary" value="Post Weather" />
+    </form>
+</div>

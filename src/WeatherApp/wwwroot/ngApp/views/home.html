@@ -1,0 +1,24 @@
+<div class="jumbotron">
+    <div class="page-header">
+        <h2>Posts</h2>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>Location</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="w in controller.weather">
+                <td>{{w.userName}}</td>
+                <td>{{w.location}}</td>
+                <td>{{w.description}}</td>
+                <td><img src="{{w.item}}" height="100" /></td> <!--This is where I am trying to grab the image. I have tried mulitple lines of code here-->
+                <td ng-show="account.isLoggedIn()"><a ng-href="/editWeather/ {{w.id}}" class="btn btn-warning">Edit</a></td>
+                <td ng-show="account.isLoggedIn()"><a ng-href="/deleteWeather/ {{w.id}}" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
