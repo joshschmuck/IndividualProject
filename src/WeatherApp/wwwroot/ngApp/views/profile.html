@@ -1,0 +1,24 @@
+﻿<div class="container jumbotron" ng-cloak>
+    <div>
+        <h2>{{account.getUserName()}}'s Posts</h2>
+    </div>
+
+    <hr />
+
+    <div ng-repeat="">
+        <div class="media-left">
+            <img class="media-object" src="{{w.item}}" height="125">
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">{{w.location}}</h4>
+            {{w.description}}
+        </div>
+        <div class="media-body">
+            <h4 class="media-right">{{w.userName}}</h4>
+        </div>
+        <div class="media-body">
+            <a ng-href="/editWeather/ {{w.id}}" ng-show="account.isLoggedIn()" class="btn btn-warning media-right" id="editBtn">Edit</a>
+            <a ng-href="/deleteWeather/ {{w.id}}" ng-show="account.isLoggedIn()" class="btn btn-danger media-right" id="deleteBtn">Delete</a>
+        </div>
+    </div>
+</div>

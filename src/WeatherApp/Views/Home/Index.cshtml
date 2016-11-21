@@ -5,16 +5,9 @@
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
     <base href="/" />
-
-    @*Need to add this to my CSS sheet*@
-    <style>
-        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, x-ng-cloak {
-            display: none !important;
-        }
-    </style>
 </head>
-<body ng-controller="AccountController as account">
-    <nav class="navbar navbar-default">
+<body ng-controller="AccountController as account" ng-cloak>
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">Weather Share</a>
@@ -22,11 +15,12 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="/addWeather" ng-show="account.isLoggedIn()">Post</a></li>
+                <li><a href="/profile" ng-show="account.isLoggedIn()">Profile</a></li>
                 <li><a href="/about">About</a></li>
             </ul>
-            <a href="/login" ng-show="!account.isLoggedIn()" type="button" class="btn btn-default navbar-btn navbar-right">Login</a>
+            <a href="/login" id="loginBtn" ng-show="!account.isLoggedIn()" type="button" class="btn btn-default navbar-btn navbar-nav navbar-right">Login</a>
             <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()" type="button" class="btn btn-default navbar-btn navbar-right">Logout</a>
-            <p class="navbar-text navbar-right"><a href="#" class="navbar-link" ng-show="account.isLoggedIn()">Signed in as: {{account.getUserName()}}</a></p>
+            <p id="signInMessage" class="navbar-text navbar-right"><a href="/profile" class="navbar-link" ng-show="account.isLoggedIn()">Signed in as: {{account.getUserName()}}</a></p>
         </div>
     </nav>
     <div class="container">
@@ -70,3 +64,10 @@
     
 </body>
 </html>
+
+
+@*User Names:
+josh@gmail.com
+josh.schmuck@gmail.com
+alyssa@gmail.com
+kevin@gmail.com*@

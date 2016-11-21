@@ -96,16 +96,29 @@ namespace WeatherApp.Controllers {
     }
 
 
-    export class SecretController {
-        public secrets;
+    //export class SecretController {
+    //    public secrets;
 
-        constructor($http: ng.IHttpService) {
-            $http.get('/api/secrets').then((results) => {
-                this.secrets = results.data;
-            });
+    //    constructor($http: ng.IHttpService) {
+    //        $http.get('/api/secrets').then((results) => {
+    //            this.secrets = results.data;
+    //        });
+    //    }
+    //}
+
+    export class ProfileController {
+        public weather;
+        public WeatherResource;
+
+        public getWeather(id: number) {
+            this.weather = this.WeatherResource({ id: id })
+        }
+
+        constructor(private $resource: angular.resource.IResourceService, private $stateParams: ng.ui.IStateParamsService, private $state: ng.ui.IStateService) {
+            this.WeatherResource = $resource(`api/weather/:id`);
+            this.getWeather($stateParams[`id`]);
         }
     }
-
 
     export class AboutController {
         public message = 'Weather Share is a community where you can post and share current conditions around the country or in your area. Just register and start sharing now! You can also browse to find out where the sunshine or other weather that fancies your interests!';

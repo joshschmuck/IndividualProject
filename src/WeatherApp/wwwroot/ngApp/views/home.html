@@ -1,24 +1,16 @@
-<div class="jumbotron">
-    <div class="page-header">
-        <h2>Posts</h2>
+<div ng-repeat="w in controller.weather" class="media jumbotron container" ng-cloak>
+    <div class="media-left">
+            <img class="media-object" src="{{w.item}}" height="125">
     </div>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>UserName</th>
-                <th>Location</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="w in controller.weather">
-                <td>{{w.userName}}</td>
-                <td>{{w.location}}</td>
-                <td>{{w.description}}</td>
-                <td><img src="{{w.item}}" height="100" /></td> <!--This is where I am trying to grab the image. I have tried mulitple lines of code here-->
-                <td ng-show="account.isLoggedIn()"><a ng-href="/editWeather/ {{w.id}}" class="btn btn-warning">Edit</a></td>
-                <td ng-show="account.isLoggedIn()"><a ng-href="/deleteWeather/ {{w.id}}" class="btn btn-danger">Delete</a></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="media-body">
+        <h4 class="media-heading">{{w.location}}</h4>
+        {{w.description}}
+    </div>
+    <div class="media-body">
+        <h4 class="media-right">{{w.userName}}</h4>
+    </div>
+    <div class="media-body">
+        <a ng-href="/editWeather/ {{w.id}}" ng-show="account.isLoggedIn()" class="btn btn-warning media-right" id="editBtn">Edit</a>
+        <a ng-href="/deleteWeather/ {{w.id}}" ng-show="account.isLoggedIn()" class="btn btn-danger media-right" id="deleteBtn">Delete</a>
+    </div>
 </div>

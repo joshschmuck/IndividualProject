@@ -1,7 +1,18 @@
-﻿body {
+﻿[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, x-ng-cloak {
+            display: none !important;
+}
+body {
     background-color: #262626;
     color: #8c8c8c;
-    background-image: url(https://4.bp.blogspot.com/-k8IX2Mkf0Jo/U4ze2gNn7CI/AAAAAAAA7xg/iKxa6bYITDs/s0/HOT+Balloon+Trip_Ultra+HD.jpg) !important;
+    background-image: url('../images/HOT Balloon Trip_Ultra HD.jpg') !important;
     background-size: cover !important;
+    background-attachment: fixed;
+    padding-top: 70px;
     font-family: Arial, Helvetica, sans-serif
+}
+#loginBtn {
+    margin-right: 50px
+}
+#signInMessage {
+    margin-right: 20px
 }

@@ -25,12 +25,17 @@ namespace WeatherApp {
                 templateUrl: `/ngApp/views/editWeather.html`,
                 controller: WeatherApp.Controllers.EditWeatherController,
                 controllerAs: `controller`
-                requireLogin: true
             })
             .state(`deleteWeather`, {
                 url: `/deleteWeather/:id`,
                 templateUrl: `/ngApp/views/deleteWeather.html`,
                 controller: WeatherApp.Controllers.DeleteWeatherController,
+                controllerAs: `controller`
+            })
+            .state(`profile`, {
+                url: `/profile`,
+                templateUrl: `/ngApp/views/profile.html`,
+                controller: WeatherApp.Controllers.ProfileController,
                 controllerAs: `controller`
             })
             .state('secret', {
