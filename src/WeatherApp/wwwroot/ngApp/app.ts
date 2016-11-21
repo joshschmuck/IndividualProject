@@ -38,12 +38,12 @@ namespace WeatherApp {
                 controller: WeatherApp.Controllers.ProfileController,
                 controllerAs: `controller`
             })
-            .state('secret', {
-                url: '/secret',
-                templateUrl: '/ngApp/views/secret.html',
-                controller: WeatherApp.Controllers.SecretController,
-                controllerAs: 'controller'
-            })
+            //.state('secret', {
+            //    url: '/secret',
+            //    templateUrl: '/ngApp/views/secret.html',
+            //    controller: WeatherApp.Controllers.SecretController,
+            //    controllerAs: 'controller'
+            //})
             .state('login', {
                 url: '/login',
                 templateUrl: '/ngApp/views/login.html',

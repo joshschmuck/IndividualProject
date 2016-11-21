@@ -107,16 +107,17 @@ namespace WeatherApp.Controllers {
     //}
 
     export class ProfileController {
-        public weather;
         public WeatherResource;
+        public weather;
 
-        public getWeather(id: number) {
-            this.weather = this.WeatherResource({ id: id })
+        public getWeather() {
+            this.weather = this.WeatherResource.query();
+            console.log(this.weather);
         }
 
-        constructor(private $resource: angular.resource.IResourceService, private $stateParams: ng.ui.IStateParamsService, private $state: ng.ui.IStateService) {
-            this.WeatherResource = $resource(`api/weather/:id`);
-            this.getWeather($stateParams[`id`]);
+        constructor($resource: angular.resource.IResourceService) {
+            this.WeatherResource = $resource(`/api/weather`);
+            this.getWeather();
         }
     }
 
